@@ -96,13 +96,16 @@ function showAlert(msg) {
     setTimeout(() => alertEl.classList.add('opacity-0'), 2500);
 }
 
-// COPY STANDARD
+// COPY STANDARD (Pilihan 1: Satu baris menyamping)
 function copyStandard() {
     const atas = document.getElementById('preview_atas').textContent;
     const bawah = document.getElementById('preview_bawah').textContent;
-    const fullText = `Atas: ${atas}\nBawah: ${bawah}`;
+    
+    // Digabungkan dengan spasi dan garis miring
+    const fullText = `${atas} / ${bawah}`;
+    
     navigator.clipboard.writeText(fullText).then(() => {
-        showAlert('Format Standar tersalin!');
+        showAlert('Teks tersalin! Siap di-paste ke 1 kolom Excel.');
     });
 }
 
