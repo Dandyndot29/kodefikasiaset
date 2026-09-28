@@ -39,7 +39,7 @@ const DB = {
         "25": "PERANTI DAPUR", "26": "CCTV", "27": "AC", "28": "KIPAS ANGIN"
     },
     sub_sub_kelompok: {
-        "01": "TANAH", "02": "HAK ATAS TANAH", "03": "TANGKI", "04": "MOBIL STATION", "05": "OPEN CUP",
+        "01": "TANAH", "02": "HAK ATAS TANAH", "03": "TANGKI", "04": "MOBIL STATION", "05": "RODA EMPAT",
         "06": "RODA TIGA", "07": "RODA DUA", "08": "GENSET BESAR", "09": "GENSET PORTABLE",
         "10": "MESIN LAS HDPE", "11": "MESIN LAS LISTRIK", "12": "KOMPRESOR", "13": "SENAI LISTRIK",
         "14": "MANOMETER", "15": "ARCO", "16": "GPS", "17": "ROMPI KERJA", "18": "SAFETY SHOES",
