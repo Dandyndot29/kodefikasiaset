@@ -22,6 +22,8 @@ const DB = {
         "04": "JALAN, JEMBATAN, IRIGASI, INSTALASI, DAN JARINGAN", "05": "ASET TETAP LAINNYA",
         "06": "KONSTRUKSI DALAM PENGERJAAN", "07": "ASET TAK BERWUJUD"
     },
+    
+    // -- KELOMPOK BAWAH --
     kelompok: {
         "01": "TANAH", "02": "HAK ATAS TANAH", "03": "KENDARAAN", "04": "PERALATAN ALAT KERJA",
         "05": "POMPA", "06": "MEUBEL", "07": "PERALATAN KANTOR/ ELEKTRONIK", "08": "JALAN DAN JEMBATAN",
@@ -46,14 +48,71 @@ const DB = {
         "27": "MEJA KERJA 1/2 BIRO", "28": "MEJA PINGPONG", "29": "MEJA TAMU", "30": "MEJA KASIR",
         "31": "KURSI DIREKTUR", "32": "KURSI TAMU", "33": "KURSI KERJA", "34": "KURSI TUNGGU",
         "35": "LEMARI KAYU", "36": "LEMARI BESI", "37": "LEMARI ARSIP", "38": "BRANKAS",
-        "39": "TV", "40": "BRACKET TV", "41": "MONITOR", "42": "KOMPUTER AIO", "43": "LAPTOP",
-        "44": "PRINTER", "45": "PRINTER SCANNER", "46": "PRINTER THERMAL", "47": "PRINTER BARCODE",
-        "48": "UPS", "49": "KULKAS 1 PINTU", "50": "KULKAS 2 PINTU", "51": "SPEAKER ACTIVE",
-        "52": "MICROPHONE", "53": "MAGICCOM", "54": "PERALATAN DAPUR", "55": "CCTV",
-        "56": "NVR 32 CHANEL", "57": "KAMERA 2MP COLOURVUE", "58": "SWITCH POE 16 PORT UNMANAGEABLE",
-        "59": "MODEM GSM", "60": "WALLMOUNT RAK", "61": "BOX PANEL", "62": "CONVERTER FO 2 UTP",
-        "63": "MIKROTIK", "64": "SWITCH MANAGEABLE 16 PORT", "65": "ACCESS POINT", "66": "AC GANTUNG",
-        "67": "AC STANDING", "68": "KIPAS ANGIN GANTUNG", "69": "KIPAS ANGIN STANDING",
-        "70": "DISPENSER", "71": "CPU", "72": "SWITCH POE 8 PORT UNMANAGEABLE", "73": "LEMARI PLASTIK"
+        "39": "LEMARI PLASTIK", "40": "LACI MEJA BESI PADESTAL", "41": "BOX PLASTIK",
+        "42": "TV", "43": "BRACKET TV", "44": "MONITOR", "45": "KOMPUTER AIO", "46": "LAPTOP",
+        "47": "PRINTER", "48": "PRINTER SCANNER", "49": "PRINTER THERMAL", "50": "PRINTER BARCODE",
+        "51": "UPS", "52": "KULKAS 1 PINTU", "53": "KULKAS 2 PINTU", "54": "SPEAKER ACTIVE",
+        "55": "MICROPHONE", "56": "MAGICCOM", "57": "PERALATAN DAPUR", "58": "CCTV",
+        "59": "NVR 32 CHANEL", "60": "KAMERA 2MP COLOURVUE", "61": "SWITCH POE 16 PORT UNMANAGEABLE",
+        "62": "MODEM GSM", "63": "WALLMOUNT RAK", "64": "BOX PANEL", "65": "CONVERTER FO 2 UTP",
+        "66": "MIKROTIK", "67": "SWITCH MANAGEABLE 16 PORT", "68": "ACCESS POINT", "69": "AC GANTUNG",
+        "70": "AC STANDING", "71": "KIPAS ANGIN GANTUNG", "72": "KIPAS ANGIN STANDING",
+        "73": "DISPENSER", "74": "CPU", "75": "SWITCH POE 8 PORT UNMANAGEABLE"
+    },
+
+    // --- MAPPING LOGIKA FILTER ---
+
+    // 1. Filter Lokasi Berdasarkan Bidang (Atas)
+    lokasi_mapping: {
+        "01": ["01", "02", "03", "04", "05"],                          
+        "02": ["06", "07", "08", "09", "10", "11", "12", "13", "14"], 
+        "03": ["15", "16"],                                            
+        "04": ["17", "18"],                                            
+        "05": ["19", "20", "21"],                                      
+        "06": ["22", "23"],                                            
+        "07": ["24", "25", "26"]                                       
+    },
+
+    // 2. Filter Sub Kelompok Berdasarkan Kelompok (Warna)
+    sub_kelompok_mapping: {
+        "01": ["01"],                                                  // Hijau Tua (Tanah)
+        "02": ["02"],                                                  // Orange (Hak Atas Tanah)
+        "03": ["03", "04"],                                            // Kuning (Kendaraan)
+        "04": ["05", "06", "07", "08", "09", "10", "11", "12"],        // Biru (Alat Kerja)
+        "05": ["13", "14", "15"],                                      // Hijau Muda (Pompa)
+        "06": ["16", "17", "18"],                                      // Cyan (Meubel)
+        "07": ["19", "20", "21", "22", "23", "24", "25", "26", "27", "28"] // Merah (Elektronik)
+    },
+
+    // 3. Filter Sub-Sub Kelompok Berdasarkan Sub Kelompok
+    sub_sub_kelompok_mapping: {
+        "01": ["01"], 
+        "02": ["02"], 
+        "03": ["03", "04", "05"],                                      // Mobil
+        "04": ["06", "07"],                                            // Motor
+        "05": ["08", "09"],                                            // Genset
+        "06": ["10", "11"],                                            // Mesin Las
+        "07": ["12"],                                                  // Kompresor
+        "08": ["13"],                                                  // Senai
+        "09": ["14"],                                                  // Manometer
+        "10": ["15"],                                                  // Arco
+        "11": ["16"],                                                  // GPS
+        "12": ["17", "18", "19", "20", "21"],                          // Peralatan K3
+        "13": ["22"],                                                  // Mesin Pompa
+        "14": ["23"],                                                  // Pompa Submersible
+        "15": ["24"],                                                  // Pompa Dosing
+        "16": ["25", "26", "27", "28", "29", "30"],                    // Meja
+        "17": ["31", "32", "33", "34"],                                // Kursi
+        "18": ["35", "36", "37", "38", "39", "40", "41"],              // Lemari & Box
+        "19": ["42", "43"],                                            // TV
+        "20": ["44", "45", "46", "61", "62", "63", "64", "65", "66", "67", "68", "74", "75"], // Komputer & Jaringan IT
+        "21": ["47", "48", "49", "50"],                                // Printer
+        "22": ["51"],                                                  // UPS
+        "23": ["52", "53"],                                            // Kulkas
+        "24": ["54", "55"],                                            // Sound System
+        "25": ["56", "57", "73"],                                      // Peranti Dapur & Dispenser
+        "26": ["58", "59", "60"],                                      // CCTV
+        "27": ["69", "70"],                                            // AC
+        "28": ["71", "72"]                                             // Kipas Angin
     }
 };
