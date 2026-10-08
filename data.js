@@ -36,7 +36,8 @@ const DB = {
         "11": "GPS", "12": "PERALATAN K3", "13": "MESIN POMPA", "14": "POMPA SUBMERSIBLE",
         "15": "POMPA DOSING", "16": "MEJA", "17": "KURSI", "18": "LEMARI", "19": "TV",
         "20": "KOMPUTER", "21": "PRINTER", "22": "UPS", "23": "KULKAS", "24": "SOUND SYSTEM",
-        "25": "PERANTI DAPUR", "26": "CCTV", "27": "AC", "28": "KIPAS ANGIN"
+        "25": "PERANTI DAPUR", "26": "CCTV", "27": "AC", "28": "KIPAS ANGIN", "29": "MESIN SEMPROT INDUSTRI",
+        "30": "KATROL", "31" : "PERKAKAS"
     },
     sub_sub_kelompok: {
         "01": "TANAH", "02": "HAK ATAS TANAH", "03": "TANGKI", "04": "MOBIL STATION", "05": "RODA EMPAT",
@@ -57,7 +58,8 @@ const DB = {
         "62": "MODEM GSM", "63": "WALLMOUNT RAK", "64": "BOX PANEL", "65": "CONVERTER FO 2 UTP",
         "66": "MIKROTIK", "67": "SWITCH MANAGEABLE 16 PORT", "68": "ACCESS POINT", "69": "AC GANTUNG",
         "70": "AC STANDING", "71": "KIPAS ANGIN GANTUNG", "72": "KIPAS ANGIN STANDING",
-        "73": "DISPENSER", "74": "CPU", "75": "SWITCH POE 8 PORT UNMANAGEABLE"
+        "73": "DISPENSER", "74": "CPU", "75": "SWITCH POE 8 PORT UNMANAGEABLE", "76": "MESIN SEMPROT INDUSTRI",
+        "77": "KATROL", "78":"TANG AMPERE", "79":"GERINDA", "80":"LAMPU KERJA PORTABLE"
     },
 
     // --- MAPPING LOGIKA FILTER ---
@@ -75,13 +77,13 @@ const DB = {
 
     // 2. Filter Sub Kelompok Berdasarkan Kelompok (Warna)
     sub_kelompok_mapping: {
-        "01": ["01"],                                                  // Hijau Tua (Tanah)
-        "02": ["02"],                                                  // Orange (Hak Atas Tanah)
-        "03": ["03", "04"],                                            // Kuning (Kendaraan)
-        "04": ["05", "06", "07", "08", "09", "10", "11", "12"],        // Biru (Alat Kerja)
-        "05": ["13", "14", "15"],                                      // Hijau Muda (Pompa)
-        "06": ["16", "17", "18"],                                      // Cyan (Meubel)
-        "07": ["19", "20", "21", "22", "23", "24", "25", "26", "27", "28"] // Merah (Elektronik)
+        "01": ["01"],                                                                // Hijau Tua (Tanah)
+        "02": ["02"],                                                                // Orange (Hak Atas Tanah)
+        "03": ["03", "04"],                                                         // Kuning (Kendaraan)
+        "04": ["05", "06", "07", "08", "09", "10", "11", "12", "30", "31"],        // Biru (Alat Kerja)
+        "05": ["13", "14", "15", "29"],                                  // Hijau Muda (Pompa)
+        "06": ["16", "17", "18"],                                                   // Cyan (Meubel)
+        "07": ["19", "20", "21", "22", "23", "24", "25", "26", "27", "28"]          // Merah (Elektronik)
     },
 
     // 3. Filter Sub-Sub Kelompok Berdasarkan Sub Kelompok
@@ -113,6 +115,9 @@ const DB = {
         "25": ["56", "57", "73"],                                      // Peranti Dapur & Dispenser
         "26": ["58", "59", "60"],                                      // CCTV
         "27": ["69", "70"],                                            // AC
-        "28": ["71", "72"]                                             // Kipas Angin
+        "28": ["71", "72"],                                             // Kipas Angin
+        "29": ["76"],                                                   // MESIN SEMPROT INDUSTRI
+        "30": ["77"],                                                    // KATROL
+        "31": ["78", "79", "80"]
     }
 };
