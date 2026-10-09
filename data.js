@@ -59,7 +59,8 @@ const DB = {
         "66": "MIKROTIK", "67": "SWITCH MANAGEABLE 16 PORT", "68": "ACCESS POINT", "69": "AC GANTUNG",
         "70": "AC STANDING", "71": "KIPAS ANGIN GANTUNG", "72": "KIPAS ANGIN STANDING",
         "73": "DISPENSER", "74": "CPU", "75": "SWITCH POE 8 PORT UNMANAGEABLE", "76": "MESIN SEMPROT INDUSTRI",
-        "77": "KATROL", "78":"TANG AMPERE", "79":"GERINDA", "80":"LAMPU KERJA PORTABLE"
+        "77": "KATROL", "78":"TANG AMPERE", "79":"GERINDA", "80":"LAMPU KERJA PORTABLE",
+        "81": "MESIN POTONG RUMPUT", "82":"ULTRASONIC FLOW METER", "83":"VAKUUM CLEANER"
     },
 
     // --- MAPPING LOGIKA FILTER ---
@@ -118,6 +119,6 @@ const DB = {
         "28": ["71", "72"],                                             // Kipas Angin
         "29": ["76"],                                                   // MESIN SEMPROT INDUSTRI
         "30": ["77"],                                                    // KATROL
-        "31": ["78", "79", "80"]
+        "31": ["78", "79", "80","81", "82", "83"]
     }
 };
