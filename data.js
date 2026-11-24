@@ -60,7 +60,7 @@ const DB = {
         "70": "AC STANDING", "71": "KIPAS ANGIN GANTUNG", "72": "KIPAS ANGIN STANDING",
         "73": "DISPENSER", "74": "CPU", "75": "SWITCH POE 8 PORT UNMANAGEABLE", "76": "MESIN SEMPROT INDUSTRI",
         "77": "KATROL", "78":"TANG AMPERE", "79":"GERINDA", "80":"LAMPU KERJA PORTABLE",
-        "81": "MESIN POTONG RUMPUT", "82":"ULTRASONIC FLOW METER", "83":"VAKUUM CLEANER"
+        "81": "MESIN POTONG RUMPUT", "82":"ULTRASONIC FLOW METER", "83":"VAKUUM CLEANER", "84":"SENAI MANUAL"
     },
 
     // --- MAPPING LOGIKA FILTER ---
@@ -96,7 +96,7 @@ const DB = {
         "05": ["08", "09"],                                            // Genset
         "06": ["10", "11"],                                            // Mesin Las
         "07": ["12"],                                                  // Kompresor
-        "08": ["13"],                                                  // Senai
+        "08": ["13", "84"],                                                  // Senai
         "09": ["14"],                                                  // Manometer
         "10": ["15"],                                                  // Arco
         "11": ["16"],                                                  // GPS
